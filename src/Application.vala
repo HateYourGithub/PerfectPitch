@@ -83,6 +83,7 @@ public class Application : Gtk.Application, UiGameListener {
         header_description.hexpand = true;
         header_description.wrap = true;
         header_description.wrap_mode = Pango.WrapMode.WORD;
+        header_description.max_width_chars = 20;
 
         create_timer_widget ();
         
@@ -119,7 +120,7 @@ public class Application : Gtk.Application, UiGameListener {
             controller.start_game ();
             header_title.label = _("Round 1");
             header_description.visible = false;
-            player.play_file ("///usr/share/artempopof/perfectpitch/sounds/bensound-jazzyfrenchy.mp3");
+            //player.play_file ("///usr/share/artempopof/perfectpitch/sounds/bensound-jazzyfrenchy.mp3");
         });
     }
 
@@ -166,7 +167,7 @@ public class Application : Gtk.Application, UiGameListener {
         main_window.title = _("PerfectPitch");
         configure_styles ();
 
-        main_window.default_width = 600;
+        main_window.default_width = 450;
         main_window.default_height = 400;
         main_window.resizable = false;
         
